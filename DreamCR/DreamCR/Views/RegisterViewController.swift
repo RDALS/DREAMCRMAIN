@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
-
+    // Text Boxes
+    @IBOutlet var Remailbox: UITextField!
+    @IBOutlet var Rpasswordbox: UITextField!
+    @IBOutlet var Rrpasswordbox: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +22,42 @@ class RegisterViewController: UIViewController {
     }
     
 
+    @IBAction func RegisterButton(_ sender: UIButton) {
+        
+        
+        
+    if let email = Remailbox.text, let pass = Rpasswordbox.text, let rpass = Rrpasswordbox.text
+    {
+     
+        Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
+            // ...
+            //Check the user isnt nill
+            if let u = user {
+                // user is found go to home screen
+               self.performSegue(withIdentifier: "GoToHome", sender:self )
+            }
+            else {
+                
+                // Error: check error and show message
+            }
+            
+            if pass == rpass {
+                //Log in is successful
+                self.performSegue(withIdentifier: "GoToHome", sender: self
+                )
+
+            }
+            else {
+             // Error in development
+            }
+                
+            }
+        }
+    
+       
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +68,5 @@ class RegisterViewController: UIViewController {
     }
     */
 
-}
+
+

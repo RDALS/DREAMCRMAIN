@@ -48,7 +48,7 @@
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="zD1-4U-5C4" kind="presentation" id="Rgd-Uf-i5e"/>
+                                                    <segue destination="zD1-4U-5C4" kind="presentation" identifier="Registration" id="Rgd-Uf-i5e"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -204,7 +204,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jGG-mc-Nes" kind="presentation" id="peJ-C3-fag"/>
+                                    <action selector="RegisterButton:" destination="zD1-4U-5C4" eventType="touchUpInside" id="Zhn-DH-1mW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,6 +217,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kFJ-mB-Nny"/>
                     </view>
+                    <connections>
+                        <outlet property="Remailbox" destination="897-Fv-qs4" id="FF9-iY-m7j"/>
+                        <outlet property="Rpasswordbox" destination="FCR-hn-fgb" id="qlH-wN-NdO"/>
+                        <outlet property="Rrpasswordbox" destination="KgV-21-ijH" id="u7Y-lw-tw6"/>
+                        <segue destination="jGG-mc-Nes" kind="presentation" identifier="GoToHome" id="dVd-7F-sO8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gui-Eq-Ehc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,6 +260,6 @@
         <image name="Login Background" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="peJ-C3-fag"/>
+        <segue reference="dVd-7F-sO8"/>
     </inferredMetricsTieBreakers>
 </document>
