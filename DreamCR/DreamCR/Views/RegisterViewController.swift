@@ -15,16 +15,127 @@ class RegisterViewController: UIViewController {
     @IBOutlet var Rpasswordbox: UITextField!
     @IBOutlet var Rrpasswordbox: UITextField!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        
     }
     
+    
+   
+    
+    
+   
+
+    // Conditions to register
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "Setting" {
+            
+            if (Rpasswordbox.text == "") {
+                
+                return false
+            } else {
+                return true
+            }
+            
+            
+            
+        }
+        
+        return true
+        
+    }
+   
 
     @IBAction func RegisterButton(_ sender: UIButton) {
         
+        HandleSinUp()
         
+      
+    //  shouldPerformSegue(withIdentifier: "Setting", sender: self)
+        
+            
+        }
+        
+        
+    
+        
+        
+        
+        @objc func HandleSinUp() {
+            
+            guard let  email = Remailbox.text else {return};
+              guard let  RPassword = Rpasswordbox.text else {return};
+            
+        
+
+            
+            
+            Auth.auth().createUser(withEmail: email, password: RPassword) { (user, error) in
+                // ...
+                //Check the user isnt nill
+                if error == nil && email != nil{
+                    // user is found go to home screen
+                    print("User Created")
+                }
+                else {
+                    
+print("Failed")
+                    
+                    
+                }
+                
+                if error == nil && RPassword != nil {
+                    //Log in is successful
+                    
+                    print("Password success")
+                    
+                    
+                    
+                }
+                else {
+                    
+print("failed")
+                    
+                    
+                    
+                }
+                
+            }
+            
+        }
+        
+
+    
+    
+        
+    
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
         
     if let email = Remailbox.text, let pass = Rpasswordbox.text, let rpass = Rrpasswordbox.text
     {
@@ -32,7 +143,7 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: pass) { (user, error) in
             // ...
             //Check the user isnt nill
-            if let u = user {
+            if  let u = user {
                 // user is found go to home screen
                self.performSegue(withIdentifier: "GoToHome", sender:self )
             }
@@ -53,9 +164,9 @@ class RegisterViewController: UIViewController {
                 
             }
         }
-    
+    */
        
-        }
+       
         
     }
     /*
