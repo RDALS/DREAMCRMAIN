@@ -13,7 +13,6 @@ class RegisterViewController: UIViewController {
     // Text Boxes
     @IBOutlet var Remailbox: UITextField!
     @IBOutlet var Rpasswordbox: UITextField!
-    @IBOutlet var Rrpasswordbox: UITextField!
     
 
     

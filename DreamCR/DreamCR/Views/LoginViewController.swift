@@ -8,12 +8,13 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
     @IBOutlet var LEmail: UITextField!
     @IBOutlet var LPassword: UITextField!
-      @IBOutlet var LogIn: UIButton!
+     // @IBOutlet var LogIn: UIButton!
     
     
     override func viewDidLoad() {
@@ -21,28 +22,71 @@ class LoginViewController: UIViewController {
 
         
         
-        if let email = LEmail.text, let pass = LPassword.text {
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    
+  
+    @IBAction func LogingIn(_ sender: Any) {
+        
+        if LEmail.text == "" || LPassword.text == "" {
+            // Allert the user of the error
             
-            Auth.auth().signIn(withEmail: email, password: pass) { (user, error) in
-                if let error = error {
-                    print(error.localizedDescription)
+            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
+        else {
+            
+            guard let email = LEmail.text else {return}
+            guard let password = LPassword.text else {return}
+            
+              Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error == nil
+            {
+                // log print
+                print("Log in succesful")
+                
+                // Go to the Home Screen
+                
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+                self.present(vc!, animated: true, completion: nil)
+                
                 }
-                else if let user = user {
-                  //  print(user.uid)
+                
+            else {
+                
+                
+                //Tells the user that there is an error and then gets firebase to tell them the error
+                let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+
                 }
-            }
+            
+            
+            
             
             
             
             
         }
-        // Do any additional setup after loading the view.
+        
+        
+        
     }
-    
-    
-  
-    
-
+ 
+    }
+ 
     /*
     // MARK: - Navigation
 
