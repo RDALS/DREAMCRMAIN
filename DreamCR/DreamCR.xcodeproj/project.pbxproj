@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01006E582225CBAA00CB0B9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01006E572225CBAA00CB0B9C /* HomeViewController.swift */; };
 		013FB98721FF4583000C14E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB98621FF4583000C14E8 /* AppDelegate.swift */; };
 		013FB98921FF4583000C14E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB98821FF4583000C14E8 /* ViewController.swift */; };
 		013FB98C21FF4583000C14E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013FB98A21FF4583000C14E8 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01006E572225CBAA00CB0B9C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		013FB98321FF4583000C14E8 /* DreamCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013FB98621FF4583000C14E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013FB98821FF4583000C14E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +99,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01006E592225D90400CB0B9C /* Slider Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Slider Menu";
+			sourceTree = "<group>";
+		};
 		013FB97A21FF4583000C14E8 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +131,7 @@
 		013FB98521FF4583000C14E8 /* DreamCR */ = {
 			isa = PBXGroup;
 			children = (
+				01006E592225D90400CB0B9C /* Slider Menu */,
 				013FB9F02208AAEE000C14E8 /* Views */,
 				013FB98621FF4583000C14E8 /* AppDelegate.swift */,
 				013FB98821FF4583000C14E8 /* ViewController.swift */,
@@ -155,6 +165,7 @@
 		013FB9F02208AAEE000C14E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01006E572225CBAA00CB0B9C /* HomeViewController.swift */,
 				013FB9F12208AB6C000C14E8 /* LoginViewController.swift */,
 				013FB9F32208B369000C14E8 /* RegisterViewController.swift */,
 				013FB9F52208B3A4000C14E8 /* SettingsViewController.swift */,
@@ -421,6 +432,7 @@
 				013FB98921FF4583000C14E8 /* ViewController.swift in Sources */,
 				013FB98721FF4583000C14E8 /* AppDelegate.swift in Sources */,
 				013FB9F42208B369000C14E8 /* RegisterViewController.swift in Sources */,
+				01006E582225CBAA00CB0B9C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

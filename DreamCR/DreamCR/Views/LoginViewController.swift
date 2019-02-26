@@ -54,9 +54,9 @@ class LoginViewController: UIViewController {
                 print("Log in succesful")
                 
                 // Go to the Home Screen
-                
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
-                self.present(vc!, animated: true, completion: nil)
+           //     self.performSegue(withIdentifier: "Home", sender: self)
+               let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+               self.present(vc!, animated: true, completion: nil)
                 
                 }
                 
