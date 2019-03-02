@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
                 
                 // Go to the Home Screen
            //     self.performSegue(withIdentifier: "Home", sender: self)
-               let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+               let vc = self.storyboard?.instantiateViewController(withIdentifier: "UiNav")
                self.present(vc!, animated: true, completion: nil)
                 
                 }

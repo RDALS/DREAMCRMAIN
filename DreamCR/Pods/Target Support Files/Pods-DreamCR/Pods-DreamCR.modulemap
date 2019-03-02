@@ -1,0 +1,6 @@
+framework module Pods_DreamCR {
+  umbrella header "Pods-DreamCR-umbrella.h"
+
+  export *
+  module * { export * }
+}
