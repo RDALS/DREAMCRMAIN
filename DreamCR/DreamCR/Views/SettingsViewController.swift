@@ -10,6 +10,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet var Male: UIButton!
+    @IBOutlet var Female: UIButton!
+    @IBOutlet var Sizes: [UIButton]!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +22,55 @@ class SettingsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    
+    @IBAction func HandleSelection(_ sender: UIButton) {
+        
+        Sizes.forEach { (button) in
+            UIView.animate(withDuration: 0.3, animations: {
+                button.isHidden = !button.isHidden
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            })
+        
+            
+        }
+        
+        
+        
     }
-    */
-
+    
+    enum Size:String {
+        case small = "Small"
+        case medium = "Medium"
+        case large = "Large"
+        
+    }
+    
+    @IBAction func SizeSelect(_ sender: UIButton) {
+        guard let title = sender.currentTitle, let sizes = Size(rawValue: title) else {
+            return
+        }
+        switch sizes {
+        case .small:
+            print("small")
+        default:
+            print("small")
+            
+        }
+        
+        
+    }
+    
+    
+    @IBAction func BttnTapped(_ sender:UIButton) {
+        
+        if sender.currentImage == UIImage(named: "Unchecked") {
+            sender.setImage(UIImage(named: "Checked"), for: .normal)
+        }
+        
+        else {
+            sender.setImage(UIImage(named: "Unchecked"), for: .normal)
+        }
+        
+    }
+   
 }

@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01006E582225CBAA00CB0B9C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01006E572225CBAA00CB0B9C /* HomeViewController.swift */; };
-		010C294A222AE17000C2D796 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C2949222AE17000C2D796 /* MenuViewController.swift */; };
-		010C294C222AE1B200C2D796 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C294B222AE1B200C2D796 /* MenuTableViewCell.swift */; };
 		013FB98721FF4583000C14E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB98621FF4583000C14E8 /* AppDelegate.swift */; };
 		013FB98921FF4583000C14E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB98821FF4583000C14E8 /* ViewController.swift */; };
 		013FB98C21FF4583000C14E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013FB98A21FF4583000C14E8 /* Main.storyboard */; };
@@ -20,6 +17,9 @@
 		013FB9F22208AB6C000C14E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB9F12208AB6C000C14E8 /* LoginViewController.swift */; };
 		013FB9F42208B369000C14E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB9F32208B369000C14E8 /* RegisterViewController.swift */; };
 		013FB9F62208B3A4000C14E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB9F52208B3A4000C14E8 /* SettingsViewController.swift */; };
+		018EF57B2255FD2300488A5B /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EF57A2255FD2300488A5B /* SideMenuTableViewController.swift */; };
+		018EF57D22560C7000488A5B /* MainVC-M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EF57C22560C7000488A5B /* MainVC-M.swift */; };
+		019C91D8224D1A5D00D440CA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C91D7224D1A5D00D440CA /* ContainerViewController.swift */; };
 		01B6B62C2211A4EF0043E245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01B6B62B2211A4EF0043E245 /* GoogleService-Info.plist */; };
 		34BE010CC51898E61FEB0367 /* Pods_DreamCRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DEE905F4BB6264DFAB5C6E /* Pods_DreamCRUITests.framework */; };
 		8F2BA8238CD0E82B21B64E84 /* Pods_DreamCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A074FF03BB0DE00673126B86 /* Pods_DreamCR.framework */; };
@@ -44,9 +44,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01006E572225CBAA00CB0B9C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		010C2949222AE17000C2D796 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		010C294B222AE1B200C2D796 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		013FB98321FF4583000C14E8 /* DreamCR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamCR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013FB98621FF4583000C14E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013FB98821FF4583000C14E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +60,10 @@
 		013FB9F12208AB6C000C14E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		013FB9F32208B369000C14E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		013FB9F52208B3A4000C14E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		018EF57A2255FD2300488A5B /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
+		018EF57C22560C7000488A5B /* MainVC-M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC-M.swift"; sourceTree = "<group>"; };
+		0195781C222EAA6F0080474A /* UMA.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = UMA.scn; sourceTree = "<group>"; };
+		019C91D7224D1A5D00D440CA /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		01B6B62B2211A4EF0043E245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		472F7C7129001FDDB86589D3 /* Pods-DreamCRUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamCRUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DreamCRUITests/Pods-DreamCRUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		68B5917145AFB90E21A0344C /* Pods-DreamCR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamCR.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamCR/Pods-DreamCR.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,15 +104,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01006E592225D90400CB0B9C /* Slider Menu */ = {
-			isa = PBXGroup;
-			children = (
-				010C2949222AE17000C2D796 /* MenuViewController.swift */,
-				010C294B222AE1B200C2D796 /* MenuTableViewCell.swift */,
-			);
-			path = "Slider Menu";
-			sourceTree = "<group>";
-		};
 		013FB97A21FF4583000C14E8 = {
 			isa = PBXGroup;
 			children = (
@@ -137,11 +129,14 @@
 		013FB98521FF4583000C14E8 /* DreamCR */ = {
 			isa = PBXGroup;
 			children = (
-				01006E592225D90400CB0B9C /* Slider Menu */,
+				018EF57E22561C0C00488A5B /* Menu Items View Controllers */,
+				018EF5792255FC0D00488A5B /* SideMenu */,
+				0195781D222EAAE30080474A /* ARKIT */,
 				013FB9F02208AAEE000C14E8 /* Views */,
 				013FB98621FF4583000C14E8 /* AppDelegate.swift */,
 				013FB98821FF4583000C14E8 /* ViewController.swift */,
 				013FB98A21FF4583000C14E8 /* Main.storyboard */,
+				0195781C222EAA6F0080474A /* UMA.scn */,
 				013FB98D21FF4583000C14E8 /* Assets.xcassets */,
 				013FB98F21FF4583000C14E8 /* LaunchScreen.storyboard */,
 				01B6B62B2211A4EF0043E245 /* GoogleService-Info.plist */,
@@ -171,12 +166,35 @@
 		013FB9F02208AAEE000C14E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				01006E572225CBAA00CB0B9C /* HomeViewController.swift */,
 				013FB9F12208AB6C000C14E8 /* LoginViewController.swift */,
 				013FB9F32208B369000C14E8 /* RegisterViewController.swift */,
 				013FB9F52208B3A4000C14E8 /* SettingsViewController.swift */,
+				019C91D7224D1A5D00D440CA /* ContainerViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		018EF5792255FC0D00488A5B /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				018EF57A2255FD2300488A5B /* SideMenuTableViewController.swift */,
+				018EF57C22560C7000488A5B /* MainVC-M.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		018EF57E22561C0C00488A5B /* Menu Items View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Menu Items View Controllers";
+			sourceTree = "<group>";
+		};
+		0195781D222EAAE30080474A /* ARKIT */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ARKIT;
 			sourceTree = "<group>";
 		};
 		A079418DEE4D36F21C1A5F74 /* Pods */ = {
@@ -434,13 +452,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				013FB9F62208B3A4000C14E8 /* SettingsViewController.swift in Sources */,
+				018EF57D22560C7000488A5B /* MainVC-M.swift in Sources */,
 				013FB9F22208AB6C000C14E8 /* LoginViewController.swift in Sources */,
-				010C294C222AE1B200C2D796 /* MenuTableViewCell.swift in Sources */,
 				013FB98921FF4583000C14E8 /* ViewController.swift in Sources */,
-				010C294A222AE17000C2D796 /* MenuViewController.swift in Sources */,
 				013FB98721FF4583000C14E8 /* AppDelegate.swift in Sources */,
 				013FB9F42208B369000C14E8 /* RegisterViewController.swift in Sources */,
-				01006E582225CBAA00CB0B9C /* HomeViewController.swift in Sources */,
+				019C91D8224D1A5D00D440CA /* ContainerViewController.swift in Sources */,
+				018EF57B2255FD2300488A5B /* SideMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
