@@ -19,6 +19,7 @@
 		013FB9F62208B3A4000C14E8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013FB9F52208B3A4000C14E8 /* SettingsViewController.swift */; };
 		018EF57B2255FD2300488A5B /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EF57A2255FD2300488A5B /* SideMenuTableViewController.swift */; };
 		018EF57D22560C7000488A5B /* MainVC-M.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EF57C22560C7000488A5B /* MainVC-M.swift */; };
+		018EF580225625BC00488A5B /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018EF57F225625BC00488A5B /* LogOutViewController.swift */; };
 		019C91D8224D1A5D00D440CA /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C91D7224D1A5D00D440CA /* ContainerViewController.swift */; };
 		01B6B62C2211A4EF0043E245 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01B6B62B2211A4EF0043E245 /* GoogleService-Info.plist */; };
 		34BE010CC51898E61FEB0367 /* Pods_DreamCRUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DEE905F4BB6264DFAB5C6E /* Pods_DreamCRUITests.framework */; };
@@ -62,6 +63,7 @@
 		013FB9F52208B3A4000C14E8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		018EF57A2255FD2300488A5B /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		018EF57C22560C7000488A5B /* MainVC-M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainVC-M.swift"; sourceTree = "<group>"; };
+		018EF57F225625BC00488A5B /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		0195781C222EAA6F0080474A /* UMA.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = UMA.scn; sourceTree = "<group>"; };
 		019C91D7224D1A5D00D440CA /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		01B6B62B2211A4EF0043E245 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		018EF57E22561C0C00488A5B /* Menu Items View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				018EF57F225625BC00488A5B /* LogOutViewController.swift */,
 			);
 			path = "Menu Items View Controllers";
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				013FB9F62208B3A4000C14E8 /* SettingsViewController.swift in Sources */,
 				018EF57D22560C7000488A5B /* MainVC-M.swift in Sources */,
 				013FB9F22208AB6C000C14E8 /* LoginViewController.swift in Sources */,
+				018EF580225625BC00488A5B /* LogOutViewController.swift in Sources */,
 				013FB98921FF4583000C14E8 /* ViewController.swift in Sources */,
 				013FB98721FF4583000C14E8 /* AppDelegate.swift in Sources */,
 				013FB9F42208B369000C14E8 /* RegisterViewController.swift in Sources */,

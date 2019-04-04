@@ -10,6 +10,32 @@ import UIKit
 
 class MainVC_M: UIViewController {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showProfile), name: NSNotification.Name("ShowProfile"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ShowAppSetting), name: NSNotification.Name("ShowAppSettings"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ShowLogOut), name: NSNotification.Name("ShowLogOut"), object: nil)
+        
+    }
+    // Toggling between menuItems
+   @objc func showProfile() {
+        performSegue(withIdentifier: "ShowProfile", sender: nil)
+        
+    }
+    @objc func ShowAppSetting() {
+        performSegue(withIdentifier: "ShowAppSetting", sender: nil)
+
+        
+    }
+    @objc func ShowLogOut() {
+        performSegue(withIdentifier: "ShowLogOut", sender: nil)
+
+        
+    }
     
     @IBAction func onTapped() {
         
