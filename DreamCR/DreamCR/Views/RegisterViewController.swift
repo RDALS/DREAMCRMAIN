@@ -15,17 +15,40 @@ class RegisterViewController: UIViewController {
     @IBOutlet var Remailbox: UITextField!
     @IBOutlet var Rpasswordbox: UITextField!
     
+    
+    var refUser : DatabaseReference!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        refUser = Database.database().reference().child("Users")
         
         
         
     }
     
+    
+    func AddUser() {
+      //  let  key = refUser.childByAutoId().key
+        
+        let UserID = Auth.auth().currentUser?.uid
+        
+        
+        let User = [
+                     "UserID": UserID,
+                    "EmailAddress": Remailbox.text! as String,
+                    "Password": Rpasswordbox.text! as String,
+                    "UserName": "Username" as String,
+                    "Photo": "gs://dreamcr-ab23a.appspot.com/Profile Images/icons8-kim-kardashian-filled-50.png",
+                    "Gender": "Nill" as String,
+                    "Size": "Nill" as String
+                   ]
+    
+        
+        refUser.child("Users").childByAutoId().setValue(User)
+    }
     
    
     
@@ -76,8 +99,12 @@ class RegisterViewController: UIViewController {
                     print("You have successfully signed up")
                     //Goes to the Setup page which lets the user take a photo for their profile picture and also chose a username
                     
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Setting")
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
                     self.present(vc!, animated: true, completion: nil)
+                    
+                    //Add user data to database
+                    
+                    self.AddUser()
                     
                 } else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
