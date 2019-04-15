@@ -12,6 +12,17 @@ import FirebaseAuth
 
 class ProfileSettingsViewController: UIViewController {
 
+    // Menu Coding Aspect
+    @IBOutlet var Sizes: [UIButton]!
+   
+    @IBOutlet var Gendr: [UIButton]!
+    
+    
+    //DataBaseProfileUpdate
+     @IBOutlet weak var PImage: UIImageView!
+    @IBOutlet weak var Uname: UITextField!
+    
+    
     var refUser : DatabaseReference!
     
     override func viewDidLoad() {
@@ -33,11 +44,51 @@ class ProfileSettingsViewController: UIViewController {
         
     }
     
+    @IBAction func SelectionS(_ sender: UIButton) {
+        
+        Sizes.forEach { (Button) in
+            Button.isHidden = !Button.isHidden
+        }
+        
+        
+        
+        
+    }
+    enum Size: String {
+        case small = "Small"
+        case medium = "Medium"
+        case large = "Large"
+        
+    }
     
-    // Code To save
+    
+    @IBAction func IsTapped(_ sender: UIButton) {
+        
+        guard let Title = sender.currentTitle, let S = Size(rawValue: Title) else {return}
         
         
-  
+        switch S {
+        case .small:
+            print("Small")
+        case .medium:
+            print("Medium")
+        case.large:
+            print("Large")
+        
+            
+        }
+       
+    }
+    
+    
+    
+    @IBAction func Cancel(_ sender: Any) {
+        
+   //  self.view.d
+    }
+    
+    
+
     
     /*
     // MARK: - Navigation
