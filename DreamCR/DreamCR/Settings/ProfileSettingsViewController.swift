@@ -31,9 +31,13 @@ class ProfileSettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         
           refUser = Database.database().reference().child("Users")
+        
+       
+        
     }
     
-    
+   
+   
     
    
     
@@ -88,7 +92,21 @@ class ProfileSettingsViewController: UIViewController {
     }
     
     
-
+// Radio Buttons
+    
+    @IBAction func FillTap(_ sender: UIButton) {
+        
+        if sender.isSelected {
+            sender.isSelected = false
+            
+            
+        }
+        else {
+            sender.isSelected = true
+        }
+        
+    }
+    
     
     /*
     // MARK: - Navigation

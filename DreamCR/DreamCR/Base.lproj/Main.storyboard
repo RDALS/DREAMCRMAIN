@@ -663,10 +663,18 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JO-zg-5jU">
                                         <rect key="frame" x="0.0" y="0.0" width="89" height="50"/>
                                         <state key="normal" title="Male" image="Unchecked"/>
+                                        <state key="selected" image="Checked"/>
+                                        <connections>
+                                            <action selector="FillTap:" destination="efc-ro-VAz" eventType="touchUpInside" id="u6C-Q2-xie"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRS-0T-E7y">
                                         <rect key="frame" x="209" y="0.0" width="109" height="50"/>
                                         <state key="normal" title="Female" image="Unchecked"/>
+                                        <state key="selected" image="Checked"/>
+                                        <connections>
+                                            <action selector="FillTap:" destination="efc-ro-VAz" eventType="touchUpInside" id="Vq9-BM-glG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -732,6 +740,7 @@
     </scenes>
     <resources>
         <image name="Background" width="750" height="1334"/>
+        <image name="Checked" width="50" height="50"/>
         <image name="Login Background" width="750" height="1334"/>
         <image name="Unchecked" width="50" height="50"/>
         <image name="icons8-delete-50" width="50" height="50"/>
