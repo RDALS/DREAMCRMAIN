@@ -41,13 +41,13 @@ class RegisterViewController: UIViewController {
                     "EmailAddress": Remailbox.text! as String,
                     "Password": Rpasswordbox.text! as String,
                     "UserName": "Username" as String,
-                    "Photo": "gs://dreamcr-ab23a.appspot.com/Profile Images/icons8-kim-kardashian-filled-50.png",
+                    "Photo": "https://firebasestorage.googleapis.com/v0/b/dreamcr-ab23a.appspot.com/o/icons8-kim-kardashian-filled-50.png?alt=media&token=10a6ebf4-3751-4082-81df-a19b2be3a7e8",
                     "Gender": "Nill" as String,
                     "Size": "Nill" as String
                    ]
     
         
-        refUser.child("Users").childByAutoId().setValue(User)
+        refUser.childByAutoId().setValue(User)
     }
     
    
