@@ -11,11 +11,12 @@ import Firebase
 import FirebaseAuth
 import SDWebImage
 
-class ProfileSettingsViewController: UIViewController {
+class ProfileSettingsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // Menu Coding Aspect
+    
     @IBOutlet var Sizes: [UIButton]!
-   
+    
     @IBOutlet var Gendr: [UIButton]!
     
     // Selection Options
@@ -27,26 +28,269 @@ class ProfileSettingsViewController: UIViewController {
     var Weight: String?
     
     //DataBaseProfileUpdate fields
-     @IBOutlet weak var PImage: UIImageView!
+    @IBOutlet weak var PImage: UIImageView!
     @IBOutlet weak var Uname: UITextField!
     
     // Database Code
     var refUser : DatabaseReference!
     var refstorage: StorageReference!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
-          refUser = Database.database().reference().child("Users")
+        refUser = Database.database().reference().child("Users")
         
         refstorage = Storage.storage().reference()
         
         LoadUserInfo()
-       
+        
         
     }
+    
+    func LoadUserInfo() {
+        
+        
+        //user log in info
+        if let UserId = Auth.auth().currentUser?.uid {
+            refUser.child("Users/Users").child(UserId).observeSingleEvent(of: .value) { (snapshot) in
+                // Creat Dictionary
+                let Values = snapshot.value as? NSDictionary
+                
+                //Image storage
+                if let profileImageURL = Values?["Photo"] as? String{
+                    
+                    self.PImage.sd_setImage(with: URL(string: profileImageURL))
+                    
+                }
+                
+                //UserName
+                
+                self.Uname.text = Values?["UserName"] as! String
+                self.Sex = Values?["Gender"] as! String
+                self.Weight = Values?["Size"] as! String
+                
+                
+                
+                
+                
+                
+            }
+            
+        }
+        
+    }
+    
+    
+    
+ 
+    
+    func SelectGender() {
+        
+        if Male.isSelected {
+            Sex = "Male"
+        }
+        if Female.isSelected {
+            Sex = "Female"
+        }
+    }
+    
+    
+    
+    // Radio Buttons
+    
+    @IBAction func FillTap(_ sender: UIButton) {
+        
+        if sender.isSelected {
+            sender.isSelected = false
+            
+            
+        }
+        else {
+            sender.isSelected = true
+        }
+        
+    }
+    
+    
+    
+// Selecting Size
+    
+    enum Size: String {
+        case small = "Small"
+        case medium = "Medium"
+        case large = "Large"
+        
+    }
+    
+    @IBAction func IsTapped(_ sender: UIButton) {
+        
+        guard let Title = sender.currentTitle, let S = Size(rawValue: Title) else {return}
+        
+        
+        switch S {
+        case .small:
+            print("Small")
+            Weight = "Small"
+        case .medium:
+            print("Medium")
+            Weight = "Medium"
+        case.large:
+            print("Large")
+            Weight = "Large"
+            
+            
+        }
+        
+    }
+    
+    // Saving Profile
+    
+    @IBAction func SaveProfile(_ sender: UIButton) {
+        
+        UpdateUserProfile()
+    }
+    
+    
+    
+    func UpdateUserProfile() {
+        
+        // Check to see if user is logged in
+        
+        if let UserID = Auth.auth().currentUser?.uid{
+            //creat an acces point to the storage
+            let storageItem = refstorage.child("Profile_Images").child(UserID)
+            // Get the image uploaded from library
+            guard let image = PImage.image else {return}
+            if let newImage = image.pngData() {
+                
+                
+                //Upload it to firebase
+                
+                storageItem.putData(newImage, metadata: nil) { (metadata, error) in
+                    if error != nil {
+                        return
+                    }
+                    
+                    storageItem.downloadURL(completion: { (url, error) in
+                        if error != nil {return}
+                        var ProfilePhotoUrl = url!.absoluteString
+                        if  ProfilePhotoUrl == url!.absoluteString {
+                            guard let UserName = self.Uname.text else {return}
+                            guard let Gendr = self.Sex else {return}
+                            guard let Size = self.Weight else {return}
+                            
+                            
+                            let newValues = [
+                                "Photo": ProfilePhotoUrl,
+                                "UserName": UserName,
+                                "Gender": Gendr,
+                                "Size": Size
+                            ]
+                            
+                            //Update Firebase Database for that user
+                            self.refUser.child("User").child(UserID).updateChildValues(newValues)
+                            
+                        }
+                    })
+                }
+            }
+            
+            
+        }
+    
+    
+    
+        // Cancelling
+        
+
+        
+        
+       
+            
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+   
+    
     
     
     //load USer profile
@@ -104,12 +348,7 @@ class ProfileSettingsViewController: UIViewController {
         
         
     }
-    
-    @IBAction func SelectionS(_ sender: UIButton) {
-        
-        Sizes.forEach { (Button) in
-            Button.isHidden = !Button.isHidden
-        }
+ 
         
         
         
@@ -231,6 +470,41 @@ class ProfileSettingsViewController: UIViewController {
         
     }
     
+    @IBAction func ChangeImage(_ sender: Any) {
+        
+        //Create Image Picker
+        let Picker = UIImagePickerController()
+        // Set Delegate
+        Picker.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        // set details
+        // No Editing
+        Picker.allowsEditing = false
+        //Source
+        Picker.sourceType = .photoLibrary
+        // Set Media Type
+        Picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+        //show photoLibrary
+        present(Picker, animated: true, completion: nil)
+    }
+    
+    
+    //
+    //what happens when the user selects a photo?
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        //create holder variable for chosen image
+        var chosenImage = UIImage()
+        //save image into variable
+        print(info)
+        chosenImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        PImage.image = chosenImage
+        //dismiss
+        dismiss(animated: true, completion: nil)
+    }
+    //what happens when the user hits cancel?
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
     
     
     // SelectingImage from Mobile
@@ -245,4 +519,7 @@ class ProfileSettingsViewController: UIViewController {
     }
     */
 
+ 
+ */
+}
 }
